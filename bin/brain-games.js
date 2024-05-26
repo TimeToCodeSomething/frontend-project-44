@@ -1,1 +1,5 @@
-console.log("Welcome to the Brain Games!");
+#!/usr/bin/env node
+
+import * as client from "../src/cli.js";
+
+client.greet();
