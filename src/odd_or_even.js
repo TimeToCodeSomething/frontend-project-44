@@ -13,8 +13,7 @@ export function odd_or_even(name) {
     number = Math.floor(Math.random() * 999 + 1);
     console.log("Question: " + number.toString());
     const answer = readlineSync.question("Your answer: ");
-    var is_odd = number % 2 == 0;
-    var correctAnswer = correct[is_odd.toString()];
+    var correctAnswer = correct[(number % 2 == 0).toString()];
 
     if (correctAnswer == answer) {
       console.log("Correct!");
@@ -24,8 +23,7 @@ export function odd_or_even(name) {
         '"' +
           answer +
           '"' +
-          " is wrong answer ;(. Correct answer was" +
-          "'" +
+          " is wrong answer ;(. Correct answer was '" +
           correctAnswer +
           "'",
       );
@@ -33,7 +31,6 @@ export function odd_or_even(name) {
       break;
     }
   }
-
   if (correctAnswers == 3) {
     console.log("Congratulations, " + name + "!");
   }
