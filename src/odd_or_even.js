@@ -29,12 +29,12 @@ export function odd_or_even(name) {
           correctAnswer +
           "'",
       );
+      console.log("Let's try again, " + name + "!");
+      break;
     }
   }
 
   if (correctAnswers == 3) {
     console.log("Congratulations, " + name + "!");
-  } else {
-    console.log("Let's try again, " + name + "!");
   }
 }
