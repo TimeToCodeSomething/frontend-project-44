@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import * as client from '../src/cli.js';
+import greet from '../src/cli.js';
 import * as game from '../src/games/progression-game.js';
 
-const name = client.greet();
+const name = greet();
 game.progression_game(name);
