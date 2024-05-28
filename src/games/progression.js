@@ -42,7 +42,7 @@ function prepare_question() {
   return [message, correctAnswer];
 }
 
-export function progession_game(name) {
+export function progression_game(name) {
   console.log("What number is missing in the progression?");
 
   var answer = "";
