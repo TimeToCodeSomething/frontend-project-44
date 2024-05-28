@@ -42,6 +42,7 @@ function prepare_task(){
 }
 
 export function progression_game(name){
+    console.log('What number is missing in the progression?')
     var correctAnswers = 0;
     var answer = '';
 
