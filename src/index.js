@@ -23,8 +23,8 @@ export function get_answer(message) {
   return readlineSync.question("Your answer: ");
 }
 
-export function generate_instance(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+export function generate_instance(max) {
+  return Math.floor(Math.random() * (max - 1) + 1);
 }
 
 export function finish_round(name) {

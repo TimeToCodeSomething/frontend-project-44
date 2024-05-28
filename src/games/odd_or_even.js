@@ -11,7 +11,7 @@ export function odd_or_even(name) {
   var correctAnswers = 0;
   var answer = "";
   for (var i = 0; i < 3; i++) {
-    number = game_handler.generate_instance(1, 1000);
+    number = game_handler.generate_instance(1000);
     answer = game_handler.get_answer(number.toString());
     var correctAnswer = correct[number % 2 == 0];
     correctAnswers = game_handler.process_answer(

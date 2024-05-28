@@ -1,6 +1,7 @@
 import * as game_handler from "../index.js";
 
 export function calculator(name) {
+  console.log("What is the result of the expression?");
   var operations = {
     1: "+",
     2: "-",
@@ -13,9 +14,9 @@ export function calculator(name) {
   var correctAnswers = 0;
 
   for (var i = 0; i < 3; i++) {
-    number1 = game_handler.generate_instance(1, 100);
-    number2 = game_handler.generate_instance(1, 100);
-    operation = game_handler.generate_instance(1, 4);
+    number1 = game_handler.generate_instance(100);
+    number2 = game_handler.generate_instance(100);
+    operation = game_handler.generate_instance(4);
     var message =
       number1.toString() +
       " " +
