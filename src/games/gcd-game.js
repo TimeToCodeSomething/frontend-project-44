@@ -12,17 +12,15 @@ export function gcd_game(name) {
   console.log("Find the greatest common divisor of given numbers.");
   var correctAnswers = 0;
   var answer = "";
-  var number1,
-    number2 = 0;
+  var numbers = [];
   for (var i = 0; i < 3; i++) {
-    number1 = game_handler.generate_instance(100);
-    number2 = game_handler.generate_instance(100);
+    numbers = game_handler.generate_instance(2, 100);
     answer = game_handler.get_answer(
-      number1.toString() + " " + number2.toString(),
+      numbers[0].toString() + " " + numbers[1].toString(),
     );
     correctAnswers = game_handler.process_answer(
       answer,
-      gcd(number1, number2).toString(),
+      gcd(numbers[0], numbers[1]).toString(),
       correctAnswers,
       name,
     );

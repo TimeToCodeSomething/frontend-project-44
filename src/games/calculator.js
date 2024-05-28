@@ -7,22 +7,20 @@ export function calculator(name) {
     2: "-",
     3: "*",
   };
-  var number1 = 0;
-  var number2 = 0;
+  var numbers = [];
   var operation = "";
   var answer = "";
   var correctAnswers = 0;
 
   for (var i = 0; i < 3; i++) {
-    number1 = game_handler.generate_instance(100);
-    number2 = game_handler.generate_instance(100);
-    operation = game_handler.generate_instance(4);
+    numbers = game_handler.generate_instance(2, 100);
+    operation = game_handler.generate_instance(1, 4);
     var message =
-      number1.toString() +
+      numbers[0].toString() +
       " " +
       operations[operation] +
       " " +
-      number2.toString();
+      numbers[1].toString();
     answer = game_handler.get_answer(message);
     correctAnswers = game_handler.process_answer(
       answer,

@@ -23,8 +23,12 @@ export function get_answer(message) {
   return readlineSync.question("Your answer: ");
 }
 
-export function generate_instance(max) {
-  return Math.floor(Math.random() * (max - 1) + 1);
+export function generate_instance(ammount, max, min = 1) {
+  var numbers = [];
+  for (var i = 0; i < ammount; i++) {
+    numbers.push(Math.floor(Math.random() * (max - min) + min));
+  }
+  return numbers;
 }
 
 export function finish_round(name) {
