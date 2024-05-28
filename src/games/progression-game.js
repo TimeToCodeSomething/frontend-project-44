@@ -45,7 +45,7 @@ export function progression_game(name){
     var correctAnswers = 0;
     var answer = '';
 
-    for (i = 0; i < 3; i++){
+    for (var i = 0; i < 3; i++){
         var data = prepare_task();
 
         answer = game_handler.get_answer(data[0]);
