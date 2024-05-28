@@ -2,7 +2,7 @@ import * as game_handler from "../index.js";
 
 function generate_progression(start, step, length){
     var progression = [start];
-    for(var i = 0; i < 3; i++){
+    for(var i = 0; i < length; i++){
         start = start + step;
         progression.push(start);
     }
@@ -27,9 +27,9 @@ function prepare_task(){
     var progressionLength = 0;
 
     startNumber = game_handler.generate_instance(1, 100);
-    progressionLength = game_handler.generate_instance(1, 20, 5);
+    progressionLength = game_handler.generate_instance(1, 20, 6);
     step = game_handler.generate_instance(1, 50);
-    progression = generate_progression(startNumber, step, progressionLength);
+    progression = generate_progression(Number(startNumber), Number(step), progressionLength);
 
     var indexToOmit = game_handler.generate_instance(1, progressionLength);
     correctAnswer = progression[indexToOmit - 1]
