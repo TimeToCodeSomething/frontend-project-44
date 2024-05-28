@@ -37,7 +37,7 @@ function prepare_question() {
   var indexToOmit = game_handler.generate_instance(1, progressionLength);
   correctAnswer = progression[indexToOmit - 1];
   progression[indexToOmit - 1] = "..";
-  let message = generate_message(progression);
+  var message = generate_message(progression);
 
   return [message, correctAnswer];
 }
