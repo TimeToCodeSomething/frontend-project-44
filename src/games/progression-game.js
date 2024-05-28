@@ -11,12 +11,12 @@ function generate_progression(start, step, length){
 }
 
 function generate_message(progression){
-    var message = "";
-    for (var i = 0; i < progression.length; i++){
+    var message = progression[0].toString();
+    for (var i = 1; i < progression.length; i++){
         message = message + " " + progression[i];
     }
 
-    return message;
+    return message
 }
 
 function prepare_task(){
