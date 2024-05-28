@@ -18,27 +18,27 @@ function generate_message(progression) {
   return message;
 }
 
-function prepare_question(){
+function prepare_question() {
   var progression = [];
   var startNumber,
-      step,
-      correctAnswer,
-      progressionLength = 0;
+    step,
+    correctAnswer,
+    progressionLength = 0;
 
   startNumber = game_handler.generate_instance(1, 100);
   progressionLength = game_handler.generate_instance(1, 20, 5);
   step = game_handler.generate_instance(1, 50);
   progression = generate_progession(
-      Number(startNumber),
-      Number(step),
-      progressionLength,
-    );
+    Number(startNumber),
+    Number(step),
+    progressionLength,
+  );
 
   var indexToOmit = game_handler.generate_instance(1, progressionLength);
   correctAnswer = progression[indexToOmit - 1];
   progression[indexToOmit - 1] = "..";
   let message = generate_message(progression);
-  
+
   return [message, correctAnswer];
 }
 
@@ -47,11 +47,10 @@ export function progession_game(name) {
 
   var answer = "";
   var correctAnswers = 0;
-  var message = '';
+  var message = "";
   var correctAnswer = 0;
 
   for (var i = 0; i < 3; i++) {
-    
     var data = prepare_question();
     message = data[0];
     correctAnswer = data[1];

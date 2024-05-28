@@ -1,17 +1,17 @@
 import * as game_handler from "../index.js";
 
-function generate_message(numbers, operation){
+function generate_message(numbers, operation) {
   var operations = {
     1: "+",
     2: "-",
     3: "*",
   };
   var message =
-  numbers[0].toString() +
-  " " +
-  operations[operation] +
-  " " +
-  numbers[1].toString();
+    numbers[0].toString() +
+    " " +
+    operations[operation] +
+    " " +
+    numbers[1].toString();
 
   return message;
 }
