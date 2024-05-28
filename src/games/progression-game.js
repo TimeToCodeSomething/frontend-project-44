@@ -3,7 +3,7 @@ import * as game_handler from "../index.js";
 function generate_progression(start, step, length){
     var progression = [start];
     for(var i = 0; i < 3; i++){
-        start = star + step;
+        start = start + step;
         progression.push(start);
     }
 
