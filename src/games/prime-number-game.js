@@ -1,7 +1,7 @@
-import * as game_handler from '../index.js';
+import * as gameHandler from '../index.js';
 
 function isPrime(number) {
-  var correct = {
+  const correct = {
     true: 'yes',
     false: 'no',
   };
@@ -17,16 +17,16 @@ function isPrime(number) {
 export default function primeNumberGame(name) {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-  var number = 0;
-  var correctAnswers = 0;
-  var correctAnswer = 0;
-  var answer = '';
+  let number = 0;
+  let correctAnswers = 0;
+  let correctAnswer = 0;
+  let answer = '';
 
-  for (var i = 0; i < 3; i = i + 1) {
-    number = game_handler.generateInstance(1, 200, 1);
+  for (let i = 0; i < 3; i += 1) {
+    number = gameHandler.generateInstance(1, 200, 1);
     correctAnswer = isPrime(Number(number));
-    answer = game_handler.getAnswer(number.toString());
-    correctAnswers = correctAnswers + game_handler.processAnswer(
+    answer = gameHandler.getAnswer(number.toString());
+    correctAnswers += gameHandler.processAnswer(
       answer,
       correctAnswer,
       name,
@@ -35,5 +35,5 @@ export default function primeNumberGame(name) {
       return;
     }
   }
-  game_handler.finishRound(name);
+  gameHandler.finishRound(name);
 }
