@@ -12,9 +12,9 @@ function generateMessage(numbers, operation) {
 }
 
 function calculateAnswer(numbers, operation) {
-  let correctAnswer = 0
+  let correctAnswer = 0;
   if (operation[0] === 1) {
-   correctAnswer = Number(numbers[0]) + Number(numbers[1]);
+    correctAnswer = Number(numbers[0]) + Number(numbers[1]);
   } else if (operation[0] === 2) {
     correctAnswer = Number(numbers[0]) - Number(numbers[1]);
   } else if (operation[0] === 3) {
