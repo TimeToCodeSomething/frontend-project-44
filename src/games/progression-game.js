@@ -1,8 +1,8 @@
-import * as game_handler from "../index.js";
+import * as game_handler from '../index.js';
 
-function generate_progression(start, step, length){
+function generateProgression(start, step, length){
     var progression = [start];
-    for(var i = 0; i < length; i++){
+    for(var i = 0; i < length; i = i + 1){
         start = start + step;
         progression.push(start);
     }
@@ -10,52 +10,51 @@ function generate_progression(start, step, length){
     return progression;
 }
 
-function generate_message(progression){
+function generateMessage(progression){
     var message = progression[0].toString();
-    for (var i = 1; i < progression.length; i++){
-        message = message + " " + progression[i];
+    for (var i = 1; i < progression.length; i = i + 1){
+        message = `${message} ${progression[i]}`;
     }
 
     return message
 }
 
-function prepare_task(){
+function prepareTask(){
     var progression = [];
     var correctAnswer = 0;
     var startNumber = 0;
     var step = 0;
     var progressionLength = 0;
 
-    startNumber = game_handler.generate_instance(1, 100);
-    progressionLength = game_handler.generate_instance(1, 20, 6);
-    step = game_handler.generate_instance(1, 50);
-    progression = generate_progression(Number(startNumber), Number(step), progressionLength);
+    startNumber = game_handler.generateInstance(1, 100);
+    progressionLength = game_handler.generateInstance(1, 20, 6);
+    step = game_handler.generateInstance(1, 50);
+    progression = generateProgression(Number(startNumber), Number(step), progressionLength);
 
-    var indexToOmit = game_handler.generate_instance(1, progressionLength);
+    var indexToOmit = game_handler.generateInstance(1, progressionLength);
     correctAnswer = progression[indexToOmit - 1]
     progression[indexToOmit - 1] = '..';
 
-    var message = generate_message(progression);
-
+    var message = generateMessage(progression);
 
     return [message, correctAnswer]
 }
 
-export function progression_game(name){
+export default function progressionGame(name){
     console.log('What number is missing in the progression?')
     var correctAnswers = 0;
     var answer = '';
 
-    for (var i = 0; i < 3; i++){
-        var data = prepare_task();
+    for (var i = 0; i < 3; i = i + 1){
+        var data = prepareTask();
 
-        answer = game_handler.get_answer(data[0]);
-        correctAnswers = game_handler.process_answer(answer, data[1], correctAnswers, name);
+        answer = game_handler.getAnswer(data[0]);
+        correctAnswers = correctAnswers + game_handler.processAnswer(answer, data[1].toString(), name);
 
-        if (i == correctAnswers){
+        if (i === correctAnswers){
             return;
         }
     }
 
-    game_handler.finish_round(name);
+    game_handler.finishRound(name);
 }
