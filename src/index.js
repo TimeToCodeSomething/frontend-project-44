@@ -18,7 +18,7 @@ export function getAnswer(message) {
 }
 
 export function generateInstance(ammount, max, min = 1) {
-  let numbers = [];
+  const numbers = [];
   for (let i = 0; i < ammount; i += 1) {
     numbers.push(Math.floor(Math.random() * (max - min) + min));
   }
