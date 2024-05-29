@@ -1,20 +1,20 @@
-import * as game_handler from '../index.js';
+import * as gameHandler from '../index.js';
 
 export default function oddOrEven(name) {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  var correct = {
+  const correct = {
     true: 'yes',
     false: 'no',
   };
-  var number = 0;
-  var correctAnswers = 0;
-  var answer = '';
-  for (var i = 0; i < 3; i = i + 1) {
-    number = game_handler.generateInstance(1, 1000);
-    answer = game_handler.getAnswer(number.toString());
-    var correctAnswer = correct[number % 2 == 0];
-    correctAnswers = correctAnswers + game_handler.processAnswer(
+  let number = 0;
+  let correctAnswers = 0;
+  let answer = '';
+  for (let i = 0; i < 3; i = i + 1) {
+    number = gameHandler.generateInstance(1, 1000);
+    answer = gameHandler.getAnswer(number.toString());
+    const correctAnswer = correct[number % 2 == 0];
+    correctAnswers += gameHandler.processAnswer(
       answer,
       correctAnswer,
       name,
@@ -23,5 +23,5 @@ export default function oddOrEven(name) {
       return;
     }
   }
-  game_handler.finishRound(name);
+  gameHandler.finishRound(name);
 }
