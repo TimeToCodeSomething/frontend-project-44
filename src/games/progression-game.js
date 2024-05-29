@@ -5,7 +5,7 @@ function generateProgression(start, step, length) {
   const progression = [startNumber];
   for (let i = 0; i < length; i += 1) {
     startNumber += step;
-    progression.push(start);
+    progression.push(startNumber);
   }
 
   return progression;
@@ -53,7 +53,7 @@ export default function progressionGame(name) {
     correctAnswers += gameHandler.processAnswer(answer, data[1].toString(), name);
 
     if (i === correctAnswers) {
-        return;
+      return;
     }
   }
 
