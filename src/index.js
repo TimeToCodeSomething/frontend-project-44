@@ -18,8 +18,8 @@ export function getAnswer(message) {
 }
 
 export function generateInstance(ammount, max, min = 1) {
-  var numbers = [];
-  for (var i = 0; i < ammount; i = i + 1) {
+  let numbers = [];
+  for (let i = 0; i < ammount; i += 1) {
     numbers.push(Math.floor(Math.random() * (max - min) + min));
   }
   return numbers;
