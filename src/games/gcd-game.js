@@ -15,7 +15,7 @@ export default function gcdGame(name) {
   for (let i = 0; i < 3; i += 1) {
     numbers = gameHandler.generateInstance(2, 100);
     answer = gameHandler.getAnswer(`${numbers[0].toString()} ${numbers[1].toString()}`);
-    correctAnswers = correctAnswers + gameHandler.processAnswer(
+    correctAnswers += gameHandler.processAnswer(
       answer,
       gcd(numbers[0], numbers[1]).toString(),
       name,
